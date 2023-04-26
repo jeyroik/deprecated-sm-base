@@ -1,0 +1,86 @@
+{
+  "title": "df/sm-base",
+  "description": "DeFlou base Extas packages",
+  "schema": "1.0",
+  "plugins": [
+    {
+      "class": "df\\components\\plugins\\http\\patterns\\PatternPluginFactoryInit",
+      "stage": "request.pattern.factory.init"
+    },
+    {
+      "class": "df\\components\\plugins\\services\\ServicePluginActionDefine",
+      "stage": "state.run.next"
+    },
+    {
+      "class": "df\\components\\plugins\\api\\ApiPluginActionDefine",
+      "stage": "state.run.next"
+    }
+  ],
+  "extensions": [
+    {
+      "class": "df\\components\\extensions\\services\\ServiceApiContextExtension",
+      "interface": "df\\interfaces\\extensions\\services\\IServiceApiContextExtension",
+      "subject": "context",
+      "methods": [
+        "getServiceApiAction",
+        "getService",
+        "setService",
+        "setServiceAction",
+        "loadServiceActions",
+        "hasServiceAction"
+      ]
+    },
+    {
+      "class": "df\\components\\extensions\\access\\AccessContextExtensionBC",
+      "interface": "df\\interfaces\\extensions\\access\\IAccessContextExtensionBC",
+      "subject": "context",
+      "methods": [
+        "setAccessAction",
+        "getAccessAction",
+        "setAccessContext",
+        "getAccessContext",
+        "setAccess",
+        "getAccess",
+        "isAllowed"
+      ]
+    },
+    {
+      "class": "df\\components\\extensions\\http\\HttpContextExtension",
+      "interface": "df\\interfaces\\extensions\\http\\IHttpContextExtension",
+      "subject": "context",
+      "methods": [
+        "getPattern",
+        "setRequestVersion",
+        "getRequestVersion",
+        "getRequestParams",
+        "setRequestParams",
+        "getRequestParam",
+        "setRequestParam",
+        "hasRequestParam",
+        "isRequestJson",
+        "addToResponseData",
+        "setStatus",
+        "getResponse",
+        "setResponse"
+      ]
+    },
+    {
+      "class": "df\\components\\extensions\\users\\UserApiContextExtension",
+      "interface": "df\\interfaces\\extensions\\users\\IUserContextExtension",
+      "subject": "context",
+      "methods": [
+        "getUser",
+        "setUser"
+      ]
+    },
+    {
+      "class": "df\\components\\extensions\\views\\ViewContextExtension",
+      "interface": "df\\interfaces\\extensions\\views\\IViewContextExtension",
+      "subject": "context",
+      "methods": [
+        "getViewRender",
+        "setViewRender"
+      ]
+    }
+  ]
+}
