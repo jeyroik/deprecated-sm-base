@@ -5,7 +5,7 @@
     "jeyroik/sm-plugin-on-failure": "2.1.1",
     "league/container": "4.*",
     "mongodb/mongodb": "1.1.0",
-    "jeyroik/extas-m": "2.2.4",
+    "jeyroik/extas-m": "2.*",
     "jeyroik/preg": "1.3.1"
   },
   "autoload": {
